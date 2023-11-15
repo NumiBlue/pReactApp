@@ -16,6 +16,7 @@
     "three": "^0.158.0"
   },
   "devDependencies": {
-    "@vitejs/plugin-react-swc": "^3.4.1"
+    "@vitejs/plugin-react-swc": "^3.4.1",
+    "sass": "^1.69.5"
   }
 }
