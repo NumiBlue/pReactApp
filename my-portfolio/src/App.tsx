@@ -1,11 +1,9 @@
-//Dependencies
+// Dependencies
 import React, { useState } from 'react';
 import { Canvas } from 'react-three-fiber';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.scss';
-import { MeshBasicMaterial } from 'three';
-
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,7 +15,7 @@ function App() {
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
         <div className="round-element">Hello, world</div>
-       
+
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
@@ -36,10 +34,11 @@ function App() {
       <div style={{ height: '300px', width: '100%' }}>
         {/* Allows for 3d rendering*/}
         <Canvas>
-          {/* 3d components with temp box mesh for visual */}
+          {/* Temp box mesh for visual */}
           <mesh>
             <boxGeometry args={[1, 1, 1]} />
-            <meshBasicMaterial color="orange" />
+            {/* Material as a property */}
+            <meshStandardMaterial color="violet" />
           </mesh>
         </Canvas>
       </div>
