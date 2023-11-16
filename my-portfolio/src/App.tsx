@@ -1,12 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.scss'
-import React from 'react';
+//Dependencies
+import React, { useState } from 'react';
 import { Canvas } from 'react-three-fiber';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import './App.scss';
+import { MeshBasicMaterial } from 'three';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -14,9 +16,8 @@ function App() {
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <div>
-          Hello, world
-        </div>
+        <div className="round-element">Hello, world</div>
+       
         <a href="https://react.dev" target="_blank">
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
@@ -30,11 +31,24 @@ function App() {
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>
+
+      {/* 3D canvas */}
+      <div style={{ height: '300px', width: '100%' }}>
+        {/* Allows for 3d rendering*/}
+        <Canvas>
+          {/* 3d components with temp box mesh for visual */}
+          <mesh>
+            <boxGeometry args={[1, 1, 1]} />
+            <meshBasicMaterial color="orange" />
+          </mesh>
+        </Canvas>
+      </div>
+
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
